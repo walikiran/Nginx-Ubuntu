@@ -1,0 +1,11 @@
+Steps to run the scripts..
+
+ Open your terminal and type
+
+ 1> ./install.sh
+ 2> ./nginx.sh
+ 3> ./wp.sh
+
+Open your browser and type http://localhost
+
+Thats all..your wordpress site is ready to use..!
