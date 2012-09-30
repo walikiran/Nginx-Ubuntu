@@ -4,7 +4,6 @@ Steps to run the scripts..
 
  1> ./install.sh
  2> ./nginx.sh
- 3> ./wp.sh
 
 Open your browser and type http://localhost
 

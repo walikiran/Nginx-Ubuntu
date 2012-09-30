@@ -71,3 +71,39 @@ CREATE database example_db;
 USE example_db;
 GRANT ALL ON example_db.* TO 'www-data' IDENTIFIED BY 'www123';
 EOFMYSQL
+
+#
+# configuration of wp-config.php for wordpress
+#
+
+directory="/var/www/wordpress/wp-config-sample.php"
+file="/var/www/wordpress/wp-config-sample.php"
+name="define('DB_NAME', 'database_name_here');"
+name1="define('DB_NAME', 'example_db');"
+name2="define('DB_USER', 'username_here');"
+name3="define('DB_USER', 'www-data');"
+name4="define('DB_PASSWORD', 'password_here');"
+name5="define('DB_PASSWORD', 'www123');"
+
+for file in $(grep -l -R $name $directory)
+	do
+		sed -e "s/$name/$name1/ig" $file >/tmp/file.tmp
+		mv /tmp/file.tmp $file
+	done
+
+for file in $(grep -l -R $name2 $directory)
+	do
+		sed -e "s/$name2/$name3/ig" $file>/tmp/file.tmp
+		mv /tmp/file.tmp $file
+
+	done
+
+for file in $(grep -l -R $name4 $directory)
+	do
+		sed -e "s/$name4/$name5/ig" $file>/tmp/file.tmp
+		mv /tmp/file.tmp $file
+		echo "Modified "$file
+	done
+
+
+mv /var/www/wordpress/wp-config-sample.php /var/www/wordpress/wp-config.php

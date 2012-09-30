@@ -100,3 +100,9 @@ ln -s /etc/nginx/sites-available/example.com /etc/nginx/sites-enabled
 cd
 echo "nginx configuration file updated successfully..!"
 
+service nginx restart
+service mysql restart
+service php5-fpm restart
+
+echo "All setup is complete!"
+echo "Open your browser and type http://localhost"
