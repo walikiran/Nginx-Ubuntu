@@ -102,7 +102,7 @@ for file in $(grep -l -R $name4 $directory)
 	do
 		sed -e "s/$name4/$name5/ig" $file>/tmp/file.tmp
 		mv /tmp/file.tmp $file
-		echo "Modified "$file
+		echo "File updated "$file
 	done
 
 
